@@ -1,0 +1,12 @@
+# sent_id = 161
+# text = πάρεστι σιγὰς ἀτίμους ἀλοιδόρους ἄλγιστ' ἀφημένων ἰδεῖν.
+# text_mss = πάρεστι σιγᾶς ἄτμος ἀλοίδορος ἅδιστος ἀφεμένων ἰδεῖν.
+1	πάρεστι	πάρειμι	VERB	v3spia---	Mood=Ind|Number=Sing|Person=3|Tense=Pres|Voice=Act	0	root	_	Ref=412
+2	σιγὰς	σιγή	NOUN	n-p---fa-	Case=Acc|Gender=Fem|Number=Plur	7	obj	_	Ref=412
+3	ἀτίμους	ἄτιμος	ADJ	a-p---fa-	Case=Acc|Gender=Fem|Number=Plur	2	amod	_	Ref=412
+4	ἀλοιδόρους	ἀλοίδορος	ADJ	a-p---fa-	Case=Acc|Gender=Fem|Number=Plur	2	amod	_	Ref=412
+5	ἄλγιστ'	ἀλγίων	ADJ	a-p---na-	Case=Acc|Gender=Neut|Number=Plur	6	obl	_	Ref=413
+6	ἀφημένων	ἄφημαι	VERB	v-pppemg-	Case=Gen|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=MidPass	2	nmod	_	Ref=413
+7	ἰδεῖν	εἶδον	VERB	v--ana---	VerbForm=Inf|Voice=Act	1	csubj	_	Ref=413|SpaceAfter=No
+8	.	.	PUNCT	u--------	_	1	punct	_	Ref=413
+

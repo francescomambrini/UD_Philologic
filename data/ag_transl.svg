@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" onload="init(evt)" onmousemove="mouse_move(evt)" onmouseout="mouse_out(evt)" height="533" width="682">
+ <script type="text/ecmascript">
+      var doc = null;
+      var root = null;
+      var css = null;
+      var last_target = null;
+      var svgNs = "http://www.w3.org/2000/svg";
+
+      function init(event) {
+         doc = event.target.ownerDocument;
+         root = doc.documentElement;
+         if (root.styleSheets != null &amp;&amp; root.styleSheets[0] != null) css = root.styleSheets[0]
+         else if (doc.styleSheets != null &amp;&amp; doc.styleSheets[0] != null) css = doc.styleSheets[0];
+         top.zoomSVG = zoom;
+         if (top.svg_loaded) top.svg_loaded(doc);
+         if (top.setSVGTitle) top.setSVGTitle(get_title());
+         if (top.setSVGDesc) top.setSVGDesc(get_desc());
+         if (top.highlightSVGNodes) top.highlightSVGNodes(css);
+      }
+      function mouse_out (event) {
+        hide_tooltip(event);
+      }
+      function mouse_move (event) {
+         show_tooltip(event);
+      }
+      function get_title () {
+        var title = root.getElementsByTagName('title').item(0);
+        if (title &amp;&amp; title.parentNode == root) {
+           return title.firstChild.nodeValue;
+        } else {
+           return '';
+        }
+      }
+      function get_desc () {
+        var desc = root.getElementsByTagName('desc').item(0);
+        if (desc &amp;&amp; desc.parentNode == root) {
+           var n = desc.firstChild;
+           while (n &amp;&amp; n.nodeType != 1) n=n.nextSibling;
+           if (!n) n=desc.firstChild;
+           return n; // desc.firstChild.nodeValue;
+        } else {
+           return '';
+        }
+      }
+      function zoom (amount) {
+        var old_scale = root.currentScale;
+        var new_scale = old_scale + amount;
+        var rescale = new_scale/old_scale;
+        root.currentScale = new_scale;
+        root.setAttribute('width',Number(root.getAttribute('width'))*rescale);
+        root.setAttribute('height',Number(root.getAttribute('height'))*rescale);
+      }
+      function hide_tooltip(event) {
+         if (event.target == last_target &amp;&amp; top.changeToolTip) {
+            top.changeToolTip("");
+         }
+      }
+      function show_tooltip(event) {
+        var target = event.target;
+        if (!top.placeTip) return;
+        var x = event.clientX;
+        var y = event.clientY;
+        top.placeTip(x,y,root,event);
+        if ( last_target != target ) {
+          last_target = target;
+          if (top.onSVGMouseOver) top.onSVGMouseOver(target);
+          if (target==root) return;
+          var desc;
+          for (var i=0; i&lt;target.childNodes.length; i++) {
+            var n = target.childNodes[i];
+            if (n.nodeName == 'desc') {
+              desc = n;
+              break;
+            }
+          }
+          if ( desc ) {
+            tooltip_text = desc.firstChild.nodeValue;
+            if (tooltip_text == null) {
+              top.changeToolTip('');
+            } else {
+              top.changeToolTip(tooltip_text.split(/\n/).join("&lt;br /&gt;"));
+            }
+          }
+        }
+      }
+
+</script>
+ <defs>
+  <style type="text/css"></style>
+ </defs>
+ <g transform="translate(5 5)">
+  <path id="i6" d="M38,91 L28,15" fill="none" stroke-linejoin="round" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i7" d="M38,91 C38,91,185.5,151.4,319.673995492748,96.4568859134779" fill="none" stroke-linecap="butt" stroke="#00ffff" stroke-dasharray="none" stroke-width="1" stroke-linejoin="round" class="line scale_width scale_arrow translation_missing seg:0.0"></path>
+  <g transform="translate(333,91)">
+   <g transform="rotate(337)">
+    <polygon id="i7" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation_missing seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i15" d="M48,245 L218,168" fill="none" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" stroke-linejoin="round" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i16" d="M48,245 C48,245,213.5,309.72,365.588980440206,250.244478464712" fill="none" stroke-linejoin="round" stroke="#00ffff" stroke-linecap="butt" stroke-width="1" stroke-dasharray="none" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(379,245)">
+   <g transform="rotate(338)">
+    <polygon id="i16" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i24" d="M58,322 L48,245" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke-width="2" stroke-linecap="butt" stroke="#555555" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i32" d="M121,322 L48,245" fill="none" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" stroke-linejoin="round" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i33" d="M121,322 C121,322,276.206804691564,295.854420511794,359.601805539066,179.697449713349" fill="none" stroke-dasharray="none" stroke-width="1" stroke-linecap="butt" stroke="#00ffff" stroke-linejoin="round" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(368,168)">
+   <g transform="rotate(305)">
+    <polygon id="i33" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i41" d="M131,399 L208,322" fill="none" stroke-dasharray="none" stroke-width="2" stroke-linecap="butt" stroke="#555555" stroke-linejoin="round" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i42" d="M131,399 C131,399,356.06107270441,392.692361806765,515.13112777546,254.44603708264" fill="none" stroke-linecap="butt" stroke="#00ffff" stroke-dasharray="none" stroke-width="1" stroke-linejoin="round" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(526,245)">
+   <g transform="rotate(319)">
+    <polygon id="i42" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i43" d="M131,399 C131,399,356.485455686096,348.970273368699,491.052436809158,179.282779486717" fill="none" stroke-linejoin="round" stroke="#00ffff" stroke-linecap="butt" stroke-width="1" stroke-dasharray="none" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(500,168)">
+   <g transform="rotate(308)">
+    <polygon id="i43" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i44" d="M131,399 C131,399,338.835705815514,388.055314206296,479.540998786744,254.897943908767" fill="none" stroke-dasharray="none" stroke-width="1" stroke-linecap="butt" stroke="#00ffff" stroke-linejoin="round" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(490,245)">
+   <g transform="rotate(316)">
+    <polygon id="i44" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i45" d="M131,399 C131,399,319.848726645779,382.793790909114,440.112111447516,255.46850801087" fill="none" stroke-linecap="butt" stroke="#00ffff" stroke-dasharray="none" stroke-width="1" stroke-linejoin="round" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(450,245)">
+   <g transform="rotate(313)">
+    <polygon id="i45" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i53" d="M208,322 L48,245" fill="none" stroke="#555555" stroke-linecap="butt" stroke-width="2" stroke-dasharray="none" stroke-linejoin="round" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i54" d="M208,322 C208,322,412.5,396.08,603.460953872383,326.904511184029" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke-width="1" stroke-linecap="butt" stroke="#00ffff" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(617,322)">
+   <g transform="rotate(340)">
+    <polygon id="i54" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i55" d="M208,322 C208,322,421.477156617528,355.927084290828,594.640753387376,252.389791821718" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke-width="1" stroke-linecap="butt" stroke="#00ffff" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(607,245)">
+   <g transform="rotate(329)">
+    <polygon id="i55" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i56" d="M208,322 C208,322,372,386.36,522.595271896117,327.260538419304" fill="none" stroke-linecap="butt" stroke="#00ffff" stroke-dasharray="none" stroke-width="1" stroke-linejoin="round" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(536,322)">
+   <g transform="rotate(338)">
+    <polygon id="i56" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i64" d="M218,168 L38,91" fill="none" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" stroke-linejoin="round" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i65" d="M218,168 C218,168,298.649162862215,164.073425053957,326.873875348423,104.031906873261" fill="none" stroke-linejoin="round" stroke="#00ffff" stroke-linecap="butt" stroke-width="1" stroke-dasharray="none" class="line scale_width scale_arrow translation seg:0.0"></path>
+  <g transform="translate(333,91)">
+   <g transform="rotate(295)">
+    <polygon id="i65" stroke-width="0" fill="#00ffff" points="0,0 -18,-4 -16,0 -18,4" class="line scale_width scale_arrow translation seg:0.0"></polygon>
+   </g>
+  </g>
+  <path id="i73" d="M263,168 L38,91" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke-width="2" stroke-linecap="butt" stroke="#555555" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i86" d="M333,91 L323,15" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke-width="2" stroke-linecap="butt" stroke="#555555" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i94" d="M343,245 L368,168" fill="none" stroke-linejoin="round" stroke="#555555" stroke-linecap="butt" stroke-width="2" stroke-dasharray="none" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i102" d="M368,168 L333,91" fill="none" stroke-linejoin="round" stroke="#555555" stroke-linecap="butt" stroke-width="2" stroke-dasharray="none" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i110" d="M379,245 L368,168" fill="none" stroke-linejoin="round" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i118" d="M440,168 L333,91" fill="none" stroke-linejoin="round" stroke="#555555" stroke-linecap="butt" stroke-width="2" stroke-dasharray="none" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i126" d="M450,245 L500,168" fill="none" stroke-width="2" stroke-dasharray="none" stroke="#555555" stroke-linecap="butt" stroke-linejoin="round" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i134" d="M490,245 L500,168" fill="none" stroke-linejoin="round" stroke="#555555" stroke-linecap="butt" stroke-width="2" stroke-dasharray="none" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i142" d="M500,168 L333,91" fill="none" stroke-linejoin="round" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i150" d="M526,245 L500,168" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke-width="2" stroke-linecap="butt" stroke="#555555" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i158" d="M536,322 L607,245" fill="none" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" stroke-linejoin="round" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i166" d="M607,245 L500,168" fill="none" stroke-linejoin="round" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i174" d="M617,322 L607,245" fill="none" stroke-linejoin="round" stroke-dasharray="none" stroke-width="2" stroke-linecap="butt" stroke="#555555" class="line scale_width scale_arrow seg:0.0"></path>
+  <path id="i182" d="M627,168 L333,91" fill="none" stroke-linejoin="round" stroke-linecap="butt" stroke="#555555" stroke-dasharray="none" stroke-width="2" class="line scale_width scale_arrow seg:0.0"></path>
+  <ellipse id="i1" cx="28.5" cy="15" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc seg:0.0">
+   <desc>sentence: πάρεστι σιγὰς ἀτίμους ἀλοιδόρους ἄλγιστ' ἀφημένων ἰδεῖν.
+</desc>
+  </ellipse>
+  <ellipse id="i8" cx="38.5" cy="91.9" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc-n1 seg:0.0"></ellipse>
+  <ellipse id="i17" cx="48.5" cy="245.7" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc-n2 seg:0.0"></ellipse>
+  <ellipse id="i25" cx="58.5" cy="322.6" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc-n3 seg:0.0"></ellipse>
+  <ellipse id="i34" cx="121.5" cy="322.6" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc-n4 seg:0.0"></ellipse>
+  <ellipse id="i46" cx="131.5" cy="399.5" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc-n5 seg:0.0"></ellipse>
+  <ellipse id="i57" cx="208.5" cy="322.6" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc-n6 seg:0.0"></ellipse>
+  <ellipse id="i66" cx="218.5" cy="168.8" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc-n7 seg:0.0"></ellipse>
+  <ellipse id="i74" cx="263.5" cy="168.8" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-grc-n8 seg:0.0"></ellipse>
+  <ellipse id="i81" cx="323.5" cy="15" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it seg:0.0">
+   <desc>sentence: Vedi l'obbrobrio muto, nella doglia acutissima in disparte seduto.
+</desc>
+  </ellipse>
+  <ellipse id="i87" cx="333.5" cy="91.9" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n1 seg:0.0"></ellipse>
+  <ellipse id="i95" cx="343.5" cy="245.7" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n2 seg:0.0"></ellipse>
+  <ellipse id="i103" cx="368.5" cy="168.8" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n3 seg:0.0"></ellipse>
+  <ellipse id="i111" cx="379.5" cy="245.7" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n4 seg:0.0"></ellipse>
+  <ellipse id="i119" cx="440.5" cy="168.8" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n5 seg:0.0"></ellipse>
+  <ellipse id="i127" cx="450.5" cy="245.7" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n6 seg:0.0"></ellipse>
+  <ellipse id="i135" cx="490.5" cy="245.7" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n7 seg:0.0"></ellipse>
+  <ellipse id="i143" cx="500.5" cy="168.8" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n8 seg:0.0"></ellipse>
+  <ellipse id="i151" cx="526.5" cy="245.7" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n9 seg:0.0"></ellipse>
+  <ellipse id="i159" cx="536.5" cy="322.6" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n10 seg:0.0"></ellipse>
+  <ellipse id="i167" cx="607.5" cy="245.7" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n11 seg:0.0"></ellipse>
+  <ellipse id="i175" cx="617.5" cy="322.6" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n12 seg:0.0"></ellipse>
+  <ellipse id="i183" cx="627.5" cy="168.8" rx="3.5" ry="3.5" stroke-width="1" stroke-dasharray="none" stroke="#000000" fill="#ff6666" class="point node #1-it-n13 seg:0.0"></ellipse>
+  <rect id="i3" x="24" y="24" width="41" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i5" x="24" y="39" width="84" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i10" x="34" y="101" width="54" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i12" x="34" y="116" width="28" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i14" x="34" y="131" width="37" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i19" x="44" y="255" width="39" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i21" x="44" y="270" width="22" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i23" x="44" y="285" width="42" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i27" x="54" y="332" width="55" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i29" x="54" y="347" width="39" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i31" x="54" y="362" width="25" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i36" x="117" y="332" width="79" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i38" x="117" y="347" width="39" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i40" x="117" y="362" width="25" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i48" x="127" y="409" width="51" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i50" x="127" y="424" width="22" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i52" x="127" y="439" width="25" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i59" x="204" y="332" width="68" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i61" x="204" y="347" width="39" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i63" x="204" y="362" width="37" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i68" x="214" y="178" width="32" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i70" x="214" y="193" width="36" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i72" x="214" y="208" width="37" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i76" x="259" y="178" width="6" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i78" x="259" y="193" width="38" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i80" x="259" y="208" width="47" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i83" x="319" y="24" width="41" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i85" x="319" y="39" width="86" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i89" x="329" y="101" width="31" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i91" x="329" y="116" width="28" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i93" x="329" y="131" width="37" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i97" x="339" y="255" width="10" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i99" x="339" y="270" width="23" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i101" x="339" y="285" width="28" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i105" x="364" y="178" width="64" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i107" x="364" y="193" width="22" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i109" x="364" y="208" width="42" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i113" x="375" y="255" width="36" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i115" x="375" y="270" width="39" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i117" x="375" y="285" width="25" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i121" x="436" y="178" width="6" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i123" x="436" y="193" width="38" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i125" x="436" y="208" width="47" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i129" x="446" y="255" width="14" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i131" x="446" y="270" width="32" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i133" x="446" y="285" width="29" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i137" x="486" y="255" width="14" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i139" x="486" y="270" width="23" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i141" x="486" y="285" width="28" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i145" x="496" y="178" width="42" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i147" x="496" y="193" width="22" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i149" x="496" y="208" width="42" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i153" x="522" y="255" width="73" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i155" x="522" y="270" width="39" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i157" x="522" y="285" width="25" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i161" x="532" y="332" width="14" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i163" x="532" y="347" width="32" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i165" x="532" y="362" width="29" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i169" x="603" y="255" width="55" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i171" x="603" y="270" width="39" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i173" x="603" y="285" width="42" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i177" x="613" y="332" width="46" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i179" x="613" y="347" width="39" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i181" x="613" y="362" width="25" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i185" x="623" y="178" width="6" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i187" x="623" y="193" width="38" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <rect id="i189" x="623" y="208" width="47" height="17" stroke-width="0" stroke-dasharray="none" stroke="#ffffff" fill="#ffffff" fill-opacity="0.9" stroke-opacity="0.9" class="textbg seg:0.0"></rect>
+  <text x="25" y="37" id="i2" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">a-tree</text>
+  <text x="25" y="52" id="i4" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">zone=grc_tb</text>
+  <text x="35" y="114" id="i9" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">πάρεστι</text>
+  <text x="35" y="129" id="i11" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">root</text>
+  <text x="35" y="144" id="i13" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">VERB</text>
+  <text x="45" y="268" id="i18" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">σιγὰς</text>
+  <text x="45" y="283" id="i20" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">obj</text>
+  <text x="45" y="298" id="i22" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">NOUN</text>
+  <text x="55" y="345" id="i26" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">ἀτίμους</text>
+  <text x="55" y="360" id="i28" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">amod</text>
+  <text x="55" y="375" id="i30" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">ADJ</text>
+  <text x="118" y="345" id="i35" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">ἀλοιδόρους</text>
+  <text x="118" y="360" id="i37" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">amod</text>
+  <text x="118" y="375" id="i39" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">ADJ</text>
+  <text x="128" y="422" id="i47" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">ἄλγιστ'</text>
+  <text x="128" y="437" id="i49" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">obl</text>
+  <text x="128" y="452" id="i51" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">ADJ</text>
+  <text x="205" y="345" id="i58" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">ἀφημένων</text>
+  <text x="205" y="360" id="i60" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">nmod</text>
+  <text x="205" y="375" id="i62" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">VERB</text>
+  <text x="215" y="191" id="i67" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">ἰδεῖν</text>
+  <text x="215" y="206" id="i69" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">csubj</text>
+  <text x="215" y="221" id="i71" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">VERB</text>
+  <text x="260" y="191" id="i75" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">.</text>
+  <text x="260" y="206" id="i77" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">punct</text>
+  <text x="260" y="221" id="i79" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">PUNCT</text>
+  <text x="320" y="37" id="i82" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">a-tree</text>
+  <text x="320" y="52" id="i84" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">zone=it_rom</text>
+  <text x="330" y="114" id="i88" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">Vedi</text>
+  <text x="330" y="129" id="i90" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">root</text>
+  <text x="330" y="144" id="i92" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">VERB</text>
+  <text x="340" y="268" id="i96" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">l'</text>
+  <text x="340" y="283" id="i98" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">det</text>
+  <text x="340" y="298" id="i100" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">DET</text>
+  <text x="365" y="191" id="i104" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">obbrobrio</text>
+  <text x="365" y="206" id="i106" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">obj</text>
+  <text x="365" y="221" id="i108" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">NOUN</text>
+  <text x="376" y="268" id="i112" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">muto</text>
+  <text x="376" y="283" id="i114" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">amod</text>
+  <text x="376" y="298" id="i116" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">ADJ</text>
+  <text x="437" y="191" id="i120" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">,</text>
+  <text x="437" y="206" id="i122" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">punct</text>
+  <text x="437" y="221" id="i124" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">PUNCT</text>
+  <text x="447" y="268" id="i128" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">in</text>
+  <text x="447" y="283" id="i130" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">case</text>
+  <text x="447" y="298" id="i132" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">ADP</text>
+  <text x="487" y="268" id="i136" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">la</text>
+  <text x="487" y="283" id="i138" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">det</text>
+  <text x="487" y="298" id="i140" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">DET</text>
+  <text x="497" y="191" id="i144" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">doglia</text>
+  <text x="497" y="206" id="i146" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">obl</text>
+  <text x="497" y="221" id="i148" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">NOUN</text>
+  <text x="523" y="268" id="i152" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">acutissima</text>
+  <text x="523" y="283" id="i154" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">amod</text>
+  <text x="523" y="298" id="i156" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">ADJ</text>
+  <text x="533" y="345" id="i160" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">in</text>
+  <text x="533" y="360" id="i162" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">case</text>
+  <text x="533" y="375" id="i164" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">ADP</text>
+  <text x="604" y="268" id="i168" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">disparte</text>
+  <text x="604" y="283" id="i170" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">nmod</text>
+  <text x="604" y="298" id="i172" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">NOUN</text>
+  <text x="614" y="345" id="i176" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">seduto</text>
+  <text x="614" y="360" id="i178" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">amod</text>
+  <text x="614" y="375" id="i180" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">ADJ</text>
+  <text x="624" y="191" id="i184" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="plaintext text_item seg:0.0">.</text>
+  <text x="624" y="206" id="i186" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#00008b" width="0" class="plaintext text_item seg:0.0">punct</text>
+  <text x="624" y="221" id="i188" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#004048" width="0" class="plaintext text_item seg:0.0">PUNCT</text>
+  <text x="0" y="486.3" id="i190" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="vline text_item">[it_rom] Vedi l' obbrobrio muto, in la doglia acutissima in disparte seduto.</text>
+  <text x="0" y="501.6" id="i191" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="vline text_item">[grc_tb] πάρεστι σιγὰς ἀτίμους ἀλοιδόρους ἄλγιστ' ἀφημένων ἰδεῖν.</text>
+  <text x="0" y="516.9" id="i192" text-anchor="start" font-family="DejaVu Sans" font-weight="normal" font-size="13" font-slant="roman" fill="#000000" width="0" class="vline text_item"></text>
+ </g>
+</svg>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<treex_document xmlns="http://ufal.mff.cuni.cz/pdt/pml/">
+  <head>
+    <schema href="treex_schema.xml" />
+  </head>
+  <meta/>
+  <bundles>
+    <LM id="1">
+      <zones>
+        <zone language="und" selector="tb">
+          <sentence>πάρεστι σιγὰς ἀτίμους ἀλοιδόρους ἄλγιστ' ἀφημένων ἰδεῖν.</sentence>
+          <trees>
+            <a_tree id="1-und">
+              <ord>0</ord>
+              <children>
+                <LM id="1-und-n1">
+                  <children>
+                    <LM id="1-und-n7">
+                      <children>
+                        <LM id="1-und-n2">
+                          <children>
+                            <LM id="1-und-n3">
+                              <form>ἀτίμους</form>
+                              <lemma>ἄτιμος</lemma>
+                              <tag>ADJ</tag>
+                              <iset/>
+                              <ord>3</ord>
+                              <deprel>amod</deprel>
+                              <conll>
+                                <pos>a-p---fa-</pos>
+                                <feat>Case=Acc|Gender=Fem|Number=Plur</feat>
+                              </conll>
+                            </LM>
+                            <LM id="1-und-n4">
+                              <form>ἀλοιδόρους</form>
+                              <lemma>ἀλοίδορος</lemma>
+                              <tag>ADJ</tag>
+                              <iset/>
+                              <ord>4</ord>
+                              <deprel>amod</deprel>
+                              <conll>
+                                <pos>a-p---fa-</pos>
+                                <feat>Case=Acc|Gender=Fem|Number=Plur</feat>
+                              </conll>
+                            </LM>
+                            <LM id="1-und-n6">
+                              <children>
+                                <LM id="1-und-n5">
+                                  <form>ἄλγιστ'</form>
+                                  <lemma>ἀλγίων</lemma>
+                                  <tag>ADJ</tag>
+                                  <iset/>
+                                  <ord>5</ord>
+                                  <deprel>obl</deprel>
+                                  <conll>
+                                    <pos>a-p---na-</pos>
+                                    <feat>Case=Acc|Gender=Neut|Number=Plur</feat>
+                                  </conll>
+                                </LM>
+                              </children>
+                              <form>ἀφημένων</form>
+                              <lemma>ἄφημαι</lemma>
+                              <tag>VERB</tag>
+                              <iset/>
+                              <ord>6</ord>
+                              <deprel>nmod</deprel>
+                              <conll>
+                                <pos>v-pppemg-</pos>
+                                <feat>Case=Gen|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=MidPass</feat>
+                              </conll>
+                            </LM>
+                          </children>
+                          <form>σιγὰς</form>
+                          <lemma>σιγή</lemma>
+                          <tag>NOUN</tag>
+                          <iset/>
+                          <ord>2</ord>
+                          <deprel>obj</deprel>
+                          <conll>
+                            <pos>n-p---fa-</pos>
+                            <feat>Case=Acc|Gender=Fem|Number=Plur</feat>
+                          </conll>
+                        </LM>
+                      </children>
+                      <form>ἰδεῖν</form>
+                      <lemma>εἶδον</lemma>
+                      <tag>VERB</tag>
+                      <iset/>
+                      <ord>7</ord>
+                      <deprel>csubj</deprel>
+                      <conll>
+                        <pos>v--ana---</pos>
+                        <feat>VerbForm=Inf|Voice=Act</feat>
+                      </conll>
+                      <alignment>
+                        <LM>
+                          <counterpart.rf>1-und-som-n7</counterpart.rf>
+                          <type>ing.same</type>
+                        </LM>
+                      </alignment>
+                    </LM>
+                    <LM id="1-und-n8">
+                      <form>.</form>
+                      <lemma>.</lemma>
+                      <tag>PUNCT</tag>
+                      <iset/>
+                      <ord>8</ord>
+                      <deprel>punct</deprel>
+                      <conll>
+                        <pos>u--------</pos>
+                        <feat>_</feat>
+                      </conll>
+                    </LM>
+                  </children>
+                  <form>πάρεστι</form>
+                  <lemma>πάρειμι</lemma>
+                  <tag>VERB</tag>
+                  <iset/>
+                  <ord>1</ord>
+                  <deprel>root</deprel>
+                  <conll>
+                    <pos>v3spia---</pos>
+                    <feat>Mood=Ind|Number=Sing|Person=3|Tense=Pres|Voice=Act</feat>
+                  </conll>
+                  <alignment>
+                    <LM>
+                      <counterpart.rf>1-und-som-n1</counterpart.rf>
+                      <type>same</type>
+                    </LM>
+                  </alignment>
+                </LM>
+              </children>
+            </a_tree>
+          </trees>
+        </zone>
+        <zone language="und" selector="loeb">
+          <sentence>πάρεστι σιγὰς ἀτίμους ἀλοιδόρους ἀλιστοὺς ἀφειμένων ἰδεῖν.</sentence>
+          <trees>
+            <a_tree id="1-und">
+              <ord>0</ord>
+              <children>
+                <LM id="1-und-som-n1">
+                  <children>
+                    <LM id="1-und-som-n7">
+                      <children>
+                        <LM id="1-und-som-n2">
+                          <children>
+                            <LM id="1-und-som-n3">
+                              <form>ἀτίμους</form>
+                              <lemma>ἄτιμος</lemma>
+                              <tag>ADJ</tag>
+                              <iset/>
+                              <ord>3</ord>
+                              <deprel>amod</deprel>
+                              <conll>
+                                <pos>a-p---fa-</pos>
+                                <feat>Case=Acc|Gender=Fem|Number=Plur</feat>
+                              </conll>
+                            </LM>
+                            <LM id="1-und-som-n4">
+                              <form>ἀλοιδόρους</form>
+                              <lemma>ἀλοίδορος</lemma>
+                              <tag>ADJ</tag>
+                              <iset/>
+                              <ord>4</ord>
+                              <deprel>amod</deprel>
+                              <conll>
+                                <pos>a-p---fa-</pos>
+                                <feat>Case=Acc|Gender=Fem|Number=Plur</feat>
+                              </conll>
+                            </LM>
+                            <LM id="1-und-som-n6">
+                              <children>
+                                <LM id="1-und-som-n5">
+                                  <form>ἀλιστοὺς</form>
+                                  <lemma>ἀλγίων</lemma>
+                                  <tag>ADJ</tag>
+                                  <iset/>
+                                  <ord>5</ord>
+                                  <deprel>obl</deprel>
+                                  <conll>
+                                    <pos>a-p---na-</pos>
+                                    <feat>Case=Acc|Gender=Neut|Number=Plur</feat>
+                                  </conll>
+                                </LM>
+                              </children>
+                              <form>ἀφειμένων</form>
+                              <lemma>ἀφίημι</lemma>
+                              <tag>VERB</tag>
+                              <iset/>
+                              <ord>6</ord>
+                              <deprel>nmod</deprel>
+                              <conll>
+                                <pos>v-pppemg-</pos>
+                                <feat>Case=Gen|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=MidPass</feat>
+                              </conll>
+                            </LM>
+                          </children>
+                          <form>σιγὰς</form>
+                          <lemma>σιγή</lemma>
+                          <tag>NOUN</tag>
+                          <iset/>
+                          <ord>2</ord>
+                          <deprel>obj</deprel>
+                          <conll>
+                            <pos>n-p---fa-</pos>
+                            <feat>Case=Acc|Gender=Fem|Number=Plur</feat>
+                          </conll>
+                        </LM>
+                      </children>
+                      <form>ἰδεῖν</form>
+                      <lemma>εἶδον</lemma>
+                      <tag>VERB</tag>
+                      <iset/>
+                      <ord>7</ord>
+                      <deprel>csubj</deprel>
+                      <conll>
+                        <pos>v--ana---</pos>
+                        <feat>VerbForm=Inf|Voice=Act</feat>
+                      </conll>
+                    </LM>
+                    <LM id="1-und-som-n8">
+                      <form>.</form>
+                      <lemma>.</lemma>
+                      <tag>PUNCT</tag>
+                      <iset/>
+                      <ord>8</ord>
+                      <deprel>punct</deprel>
+                      <conll>
+                        <pos>u--------</pos>
+                        <feat>_</feat>
+                      </conll>
+                    </LM>
+                  </children>
+                  <form>πάρεστι</form>
+                  <lemma>πάρειμι</lemma>
+                  <tag>VERB</tag>
+                  <iset/>
+                  <ord>1</ord>
+                  <deprel>root</deprel>
+                  <conll>
+                    <pos>v3spia---</pos>
+                    <feat>Mood=Ind|Number=Sing|Person=3|Tense=Pres|Voice=Act</feat>
+                  </conll>
+                </LM>
+              </children>
+            </a_tree>
+          </trees>
+        </zone>
+      </zones>
+    </LM>
+  </bundles>
+</treex_document>

@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Udapi viewer</title>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.rawgit.com/eligrey/FileSaver.js/1.3.4/FileSaver.min.js"></script>
+<script src="https://cdn.rawgit.com/ufal/js-treex-view/gh-pages/js-treex-view.js"></script>
+</head>
+<body>
+<button style="float:right" type="submit" onclick="saveTree()"><span>Save as SVG</span></button><div id="treex-view"></div><script>
+data=[
+{"zones":{"it_rom":{"sentence":"Vedi l'obbrobrio muto, nella doglia acutissima in disparte seduto.","trees":{"a":{"language":"it_rom","nodes":[
+{"id":"n1","parent":null,"firstson":"n1-1","labels":["zone=it_rom","id=1"]}
+,{"id":"n1-1","parent":"n1","order":1,"firstson":"n1-3","data":{"ord":1,"form":"Vedi","lemma":"vedere","upos":"VERB","xpos":"V","feats":"Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin","deprel":"root","misc":"TokenRange=0:4","id":"1#1"},"labels":["Vedi","#{#bb0000}VERB","#{#0000bb}root"],"hint":"lemma=vedere\nMood=Imp\nNumber=Sing\nPerson=2\nTense=Pres\nVerbForm=Fin"}
+,{"id":"n1-2","parent":"n1-3","order":2,"rbrother":"n1-4","data":{"ord":2,"form":"l'","lemma":"il","upos":"DET","xpos":"RD","feats":"Definite=Def|Number=Sing|PronType=Art","deprel":"det","misc":"SpaceAfter=No|TokenRange=5:7","id":"1#2"},"labels":["l'","#{#bb0000}DET","#{#0000bb}det"],"hint":"lemma=il\nDefinite=Def\nNumber=Sing\nPronType=Art"}
+,{"id":"n1-3","parent":"n1-1","order":3,"firstson":"n1-2","rbrother":"n1-5","data":{"ord":3,"form":"obbrobrio","lemma":"obbrobrio","upos":"NOUN","xpos":"S","feats":"Gender=Masc|Number=Sing","deprel":"obj",
+"alignment" : [
+   {
+      "#value" : {
+         "type" : "same",
+         "counterpart.rf" : "n161-4"
+      }
+   }
+],
+"misc":"TokenRange=7:16","id":"1#3"},"labels":["obbrobrio","#{#bb0000}NOUN","#{#0000bb}obj"],"hint":"lemma=obbrobrio\nGender=Masc\nNumber=Sing"}
+,{"id":"n1-4","parent":"n1-3","order":4,"data":{"ord":4,"form":"muto","lemma":"muto","upos":"ADJ","xpos":"A","feats":"Gender=Masc|Number=Sing","deprel":"amod","misc":"SpaceAfter=No|TokenRange=17:21","id":"1#4"},"labels":["muto","#{#bb0000}ADJ","#{#0000bb}amod"],"hint":"lemma=muto\nGender=Masc\nNumber=Sing"}
+,{"id":"n1-5","parent":"n1-1","order":5,"rbrother":"n1-8","data":{"ord":5,"form":",","lemma":",","upos":"PUNCT","xpos":"FF","feats":"_","deprel":"punct","misc":"TokenRange=21:22","id":"1#5"},"labels":[",","#{#bb0000}PUNCT","#{#0000bb}punct"],"hint":"lemma=,\n_"}
+,{"id":"n1-6","parent":"n1-8","order":6,"rbrother":"n1-7","data":{"ord":6,"form":"in","lemma":"in","upos":"ADP","xpos":"E","feats":"_","deprel":"case","misc":"_","id":"1#6"},"labels":["in","#{#bb0000}ADP","#{#0000bb}case"],"hint":"lemma=in\n_"}
+,{"id":"n1-7","parent":"n1-8","order":7,"rbrother":"n1-9","data":{"ord":7,"form":"la","lemma":"il","upos":"DET","xpos":"RD","feats":"Definite=Def|Gender=Fem|Number=Sing|PronType=Art","deprel":"det","misc":"_","id":"1#7"},"labels":["la","#{#bb0000}DET","#{#0000bb}det"],"hint":"lemma=il\nDefinite=Def\nGender=Fem\nNumber=Sing\nPronType=Art"}
+,{"id":"n1-8","parent":"n1-1","order":8,"firstson":"n1-6","rbrother":"n1-13","data":{"ord":8,"form":"doglia","lemma":"doglia","upos":"NOUN","xpos":"S","feats":"Gender=Fem|Number=Sing","deprel":"obl","misc":"TokenRange=29:35","id":"1#8"},"labels":["doglia","#{#bb0000}NOUN","#{#0000bb}obl"],"hint":"lemma=doglia\nGender=Fem\nNumber=Sing"}
+,{"id":"n1-9","parent":"n1-8","order":9,"rbrother":"n1-11","data":{"ord":9,"form":"acutissima","lemma":"acuto","upos":"ADJ","xpos":"A","feats":"Degree=Abs|Gender=Fem|Number=Sing","deprel":"amod","misc":"TokenRange=36:46","id":"1#9"},"labels":["acutissima","#{#bb0000}ADJ","#{#0000bb}amod"],"hint":"lemma=acuto\nDegree=Abs\nGender=Fem\nNumber=Sing"}
+,{"id":"n1-10","parent":"n1-11","order":10,"rbrother":"n1-12","data":{"ord":10,"form":"in","lemma":"in","upos":"ADP","xpos":"E","feats":"_","deprel":"case","misc":"TokenRange=47:49","id":"1#10"},"labels":["in","#{#bb0000}ADP","#{#0000bb}case"],"hint":"lemma=in\n_"}
+,{"id":"n1-11","parent":"n1-8","order":11,"firstson":"n1-10","data":{"ord":11,"form":"disparte","lemma":"disparte","upos":"NOUN","xpos":"S","feats":"Gender=Masc|Number=Sing","deprel":"nmod","misc":"TokenRange=50:58","id":"1#11"},"labels":["disparte","#{#bb0000}NOUN","#{#0000bb}nmod"],"hint":"lemma=disparte\nGender=Masc\nNumber=Sing"}
+,{"id":"n1-12","parent":"n1-11","order":12,"data":{"ord":12,"form":"seduto","lemma":"seduto","upos":"ADJ","xpos":"A","feats":"Gender=Masc|Number=Sing","deprel":"amod","misc":"SpaceAfter=No|TokenRange=59:65","id":"1#12"},"labels":["seduto","#{#bb0000}ADJ","#{#0000bb}amod"],"hint":"lemma=seduto\nGender=Masc\nNumber=Sing"}
+,{"id":"n1-13","parent":"n1-1","order":13,"data":{"ord":13,"form":".","lemma":".","upos":"PUNCT","xpos":"FS","feats":"_","deprel":"punct","misc":"SpaceAfter=No|TokenRange=65:66","id":"1#13"},"labels":[".","#{#bb0000}PUNCT","#{#0000bb}punct"],"hint":"lemma=.\n_"}
+]}}}
+,"grc_tb":{"sentence":"πάρεστι σιγὰς ἀτίμους ἀλοιδόρους ἄλγιστ' ἀφημένων ἰδεῖν.","trees":{"a":{"language":"grc_tb","nodes":[
+{"id":"n161","parent":null,"firstson":"n161-1","labels":["zone=grc_tb","id=161"]}
+,{"id":"n161-1","parent":"n161","order":1,"firstson":"n161-7","data":{"ord":1,"form":"πάρεστι","lemma":"πάρειμι","upos":"VERB","xpos":"v3spia---","feats":"Mood=Ind|Number=Sing|Person=3|Tense=Pres|Voice=Act","deprel":"root","misc":"Ref=412","id":"161#1"},"labels":["πάρεστι","#{#bb0000}VERB","#{#0000bb}root"],"hint":"lemma=πάρειμι\nMood=Ind\nNumber=Sing\nPerson=3\nTense=Pres\nVoice=Act"}
+,{"id":"n161-2","parent":"n161-7","order":2,"firstson":"n161-3","data":{"ord":2,"form":"σιγὰς","lemma":"σιγή","upos":"NOUN","xpos":"n-p---fa-","feats":"Case=Acc|Gender=Fem|Number=Plur","deprel":"obj","misc":"Ref=412","id":"161#2"},"labels":["σιγὰς","#{#bb0000}NOUN","#{#0000bb}obj"],"hint":"lemma=σιγή\nCase=Acc\nGender=Fem\nNumber=Plur"}
+,{"id":"n161-3","parent":"n161-2","order":3,"rbrother":"n161-4","data":{"ord":3,"form":"ἀτίμους","lemma":"ἄτιμος","upos":"ADJ","xpos":"a-p---fa-","feats":"Case=Acc|Gender=Fem|Number=Plur","deprel":"amod","misc":"Ref=412","id":"161#3"},"labels":["ἀτίμους","#{#bb0000}ADJ","#{#0000bb}amod"],"hint":"lemma=ἄτιμος\nCase=Acc\nGender=Fem\nNumber=Plur"}
+,{"id":"n161-4","parent":"n161-2","order":4,"rbrother":"n161-6","data":{"ord":4,"form":"ἀλοιδόρους","lemma":"ἀλοίδορος","upos":"ADJ","xpos":"a-p---fa-","feats":"Case=Acc|Gender=Fem|Number=Plur","deprel":"amod","misc":"Ref=412","id":"161#4"},"labels":["ἀλοιδόρους","#{#bb0000}ADJ","#{#0000bb}amod"],"hint":"lemma=ἀλοίδορος\nCase=Acc\nGender=Fem\nNumber=Plur"}
+,{"id":"n161-5","parent":"n161-6","order":5,"data":{"ord":5,"form":"ἄλγιστ'","lemma":"ἀλγίων","upos":"ADJ","xpos":"a-p---na-","feats":"Case=Acc|Gender=Neut|Number=Plur","deprel":"obl","misc":"Ref=413","id":"161#5"},"labels":["ἄλγιστ'","#{#bb0000}ADJ","#{#0000bb}obl"],"hint":"lemma=ἀλγίων\nCase=Acc\nGender=Neut\nNumber=Plur"}
+,{"id":"n161-6","parent":"n161-2","order":6,"firstson":"n161-5","data":{"ord":6,"form":"ἀφημένων","lemma":"ἄφημαι","upos":"VERB","xpos":"v-pppemg-","feats":"Case=Gen|Gender=Masc|Number=Plur|Tense=Pres|VerbForm=Part|Voice=MidPass","deprel":"nmod","misc":"Ref=413","id":"161#6"},"labels":["ἀφημένων","#{#bb0000}VERB","#{#0000bb}nmod"],"hint":"lemma=ἄφημαι\nCase=Gen\nGender=Masc\nNumber=Plur\nTense=Pres\nVerbForm=Part\nVoice=MidPass"}
+,{"id":"n161-7","parent":"n161-1","order":7,"firstson":"n161-2","rbrother":"n161-8","data":{"ord":7,"form":"ἰδεῖν","lemma":"εἶδον","upos":"VERB","xpos":"v--ana---","feats":"VerbForm=Inf|Voice=Act","deprel":"csubj","misc":"Ref=413|SpaceAfter=No","id":"161#7"},"labels":["ἰδεῖν","#{#bb0000}VERB","#{#0000bb}csubj"],"hint":"lemma=εἶδον\nVerbForm=Inf\nVoice=Act"}
+,{"id":"n161-8","parent":"n161-1","order":8,"data":{"ord":8,"form":".","lemma":".","upos":"PUNCT","xpos":"u--------","feats":"_","deprel":"punct","misc":"Ref=413","id":"161#8"},"labels":[".","#{#bb0000}PUNCT","#{#0000bb}punct"],"hint":"lemma=.\n_"}
+]}}}
+},"desc":[["[it_rom]","label"],[" ","space"],["Vedi","n1-1"],[" ","space"],["l'","n1-2"],["obbrobrio","n1-3"],[" ","space"],["muto","n1-4"],[",","n1-5"],[" ","space"],["in","n1-6"],[" ","space"],["la","n1-7"],[" ","space"],["doglia","n1-8"],[" ","space"],["acutissima","n1-9"],[" ","space"],["in","n1-10"],[" ","space"],["disparte","n1-11"],[" ","space"],["seduto","n1-12"],[".","n1-13"],["\n","newline"],["[grc_tb]","label"],[" ","space"],["πάρεστι","n161-1"],[" ","space"],["σιγὰς","n161-2"],[" ","space"],["ἀτίμους","n161-3"],[" ","space"],["ἀλοιδόρους","n161-4"],[" ","space"],["ἄλγιστ'","n161-5"],[" ","space"],["ἀφημένων","n161-6"],[" ","space"],["ἰδεῖν","n161-7"],[".","n161-8"],[" ","space"],["\n","newline"]]}
+];
+$('#treex-view').treexView(data);
+function saveTree() {
+         var svg_el = jQuery('svg');
+         if (svg_el.length) {
+            var svg = new Blob([svg_el.parent().html()], {type: "image/svg+xml"});
+            saveAs(svg, 'tree.svg');
+         }
+        }
+</script></body></html>
