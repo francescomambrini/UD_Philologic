@@ -1,0 +1,84 @@
+# sent_id = 15
+# version = Garvie
+# text = ἰαλτὸς ἐκ δόμων ἔβαν χοὰς προπομποῦσ' ὀξύχειρι σὺν κόπῳ.
+1	ἰαλτὸς	ἰαλτός	ADJ	a-s---fn-	Case=Nom|Gender=Fem|Number=Sing	4	advcl:compl	_	Ref=22
+2	ἐκ	ἐκ	ADP	r--------	_	3	case	_	Ref=22
+3	δόμων	δόμος	NOUN	n-p---mg-	Case=Gen|Gender=Masc|Number=Plur	4	obl:arg	_	Ref=22
+4	ἔβαν	βαίνω	VERB	v1saia---	Mood=Ind|Number=Sing|Person=1|Tense=Past|Voice=Act	0	root	_	Ref=22
+5	χοὰς	χοή	NOUN	n-p---fa-	Case=Acc|Gender=Fem|Number=Plur	6	obj	_	Ref=23|Ruling=ArgOfAdj
+6	προπομποῦσ'	προπέμπω	VERB	a-s---fn-	Case=Nom|Gender=Fem|Number=Sing	4	advcl	_	Ref=23
+7	ὀξύχειρι	ὀξύχειρ	NOUN	n-s---md-	Case=Dat|Gender=Masc|Number=Sing	9	nmod	_	Ref=23
+8	σὺν	σύν	ADP	r--------	_	9	case	_	Ref=23
+9	κόπῳ	κόπος	NOUN	n-s---md-	Case=Dat|Gender=Masc|Number=Sing	6	obl	_	Ref=23|SpaceAfter=No
+10	.	.	PUNCT	u--------	_	4	punct	_	Ref=23
+
+# sent_id = 16
+# text = πρέπει παρηὶς φοινίοις ἀμυγμοῖς ὄνυχος ἄλοκι νεοτόμῳ·
+# version = original tb
+1	πρέπει	πρέπω	VERB	v3spia---	Mood=Ind|Number=Sing|Person=3|Tense=Pres|Voice=Act	0	root	_	Ref=24
+2	παρηὶς	παρηίς	NOUN	n-s---fn-	Case=Nom|Gender=Fem|Number=Sing	1	nsubj	_	Ref=24
+3	φοινίοις	φοίνιος	ADJ	a-p---md-	Case=Dat|Gender=Masc|Number=Plur	4	amod	_	Ref=24
+4	ἀμυγμοῖς	ἀμυγμός	NOUN	n-p---md-	Case=Dat|Gender=Masc|Number=Plur	1	obj	_	Ref=24
+5	ὄνυχος	ὄνυξ	NOUN	n-s---mg-	Case=Gen|Gender=Masc|Number=Sing	6	nmod	_	Ref=25
+6	ἄλοκι	αὖλαξ	NOUN	n-s---fd-	Case=Dat|Gender=Fem|Number=Sing	4	appos	_	Ref=25
+7	νεοτόμῳ	νεότομος	ADJ	a-s---fd-	Case=Dat|Gender=Fem|Number=Sing	6	amod	_	Ref=25|SpaceAfter=No
+8	·	·	PUNCT	u--------	_	1	punct	_	Ref=25
+
+# sent_id = 19
+# text = τορὸς δὲ Φοῖβος ὀρθόθριξ δόμων ὀνειρόμαντις, ἐξ ὕπνου κότον πνέων, ἀωρόνυκτον ἀμβόαμα μυχόθεν ἔλακε περὶ φόβῳ, γυναικείοισιν ἐν δώμασιν βαρὺς πίτνων.
+# version = original tb
+1	τορὸς	τορός	ADJ	a-s---mn-	Case=Nom|Gender=Masc|Number=Sing	3	acl:compl	_	Ref=32
+2	δὲ	δέ	ADV	g--------	PartType=Ptcl	16	advmod	_	Ref=32
+3	Φοῖβος	Φοῖβος	PROPN	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	16	nsubj	_	Ref=32
+4	ὀρθόθριξ	ὀρθόθριξ	NOUN	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	3	nmod	_	Ref=32
+5	δόμων	δόμος	NOUN	n-p---mg-	Case=Gen|Gender=Masc|Number=Plur	6	nmod	_	Ref=33
+6	ὀνειρόμαντις	ὀνειρόμαντις	NOUN	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	3	nmod	_	Ref=33|SpaceAfter=No
+7	,	,	PUNCT	u--------	_	11	punct	_	Ref=33
+8	ἐξ	ἐκ	ADP	r--------	_	9	case	_	Ref=33
+9	ὕπνου	ὕπνος	NOUN	n-s---mg-	Case=Gen|Gender=Masc|Number=Sing	11	obl	_	Ref=33
+10	κότον	κότος	NOUN	n-s---ma-	Case=Acc|Gender=Masc|Number=Sing	11	obj	_	Ref=33
+11	πνέων	πνέω	VERB	v-sppamn-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	16	advcl	_	Ref=34|SpaceAfter=No
+12	,	,	PUNCT	u--------	_	11	punct	_	Ref=34
+13	ἀωρόνυκτον	ἀωρόνυκτος	ADJ	a-s---na-	Case=Acc|Gender=Neut|Number=Sing	14	amod	_	Ref=34
+14	ἀμβόαμα	ἀναβόαμα	NOUN	n-s---na-	Case=Acc|Gender=Neut|Number=Sing	16	obj	_	Ref=34
+15	μυχόθεν	μυχόθεν	ADV	d--------	_	16	advmod	_	Ref=35
+16	ἔλακε	λάσκω	VERB	v3saia---	Mood=Ind|Number=Sing|Person=3|Tense=Past|Voice=Act	0	root	_	Ref=35
+17	περὶ	περί	ADP	r--------	_	18	case	_	Ref=35
+18	φόβῳ	φόβος	NOUN	n-s---md-	Case=Dat|Gender=Masc|Number=Sing	16	obl	_	Ref=35|SpaceAfter=No
+19	,	,	PUNCT	u--------	_	24	punct	_	Ref=35
+20	γυναικείοισιν	γυναικεῖος	ADJ	a-p---nd-	Case=Dat|Gender=Neut|Number=Plur	22	amod	_	Ref=36
+21	ἐν	ἐν	ADP	r--------	_	22	case	_	Ref=36
+22	δώμασιν	δῶμα	NOUN	n-p---nd-	Case=Dat|Gender=Neut|Number=Plur	24	obl:arg	_	Ref=36
+23	βαρὺς	βαρύς	ADJ	a-s---mn-	Case=Nom|Gender=Masc|Number=Sing	24	advcl:compl	_	Ref=36
+24	πίτνων	πίπτω	VERB	v-sppamn-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	16	advcl	_	Ref=36|SpaceAfter=No
+25	.	.	PUNCT	u--------	_	16	punct	_	Ref=36
+
+# sent_id = 19g
+# text = τορὸς γὰρ ὀρθόθριξ φόβος δόμων ὀνειρόμαντις, ἐξ ὕπνου κότον πνέων, ἀωρόνυκτον ἀμβόαμα μυχόθεν ἔλακε περὶ φόβῳ, γυναικείοισιν ἐν δώμασιν βαρὺς πίτνων.
+# version = original tb
+1	τορὸς	τορός	ADJ	a-s---mn-	Case=Nom|Gender=Masc|Number=Sing	3	acl:compl	_	Ref=32
+2	γὰρ	γάρ	ADV	g--------	PartType=Ptcl	16	advmod	_	Ref=32
+3	ὀρθόθριξ	ὀρθόθριξ	ADJ	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	4	amod	_	Ref=32
+4	φόβος	φόβος	NOUN	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	16	nsubj	_	Ref=32
+5	δόμων	δόμος	NOUN	n-p---mg-	Case=Gen|Gender=Masc|Number=Plur	6	nmod	_	Ref=33
+6	ὀνειρόμαντις	ὀνειρόμαντις	NOUN	n-s---mn-	Case=Nom|Gender=Masc|Number=Sing	4	nmod	_	Ref=33|SpaceAfter=No
+7	,	,	PUNCT	u--------	_	11	punct	_	Ref=33
+8	ἐξ	ἐκ	ADP	r--------	_	9	case	_	Ref=33
+9	ὕπνου	ὕπνος	NOUN	n-s---mg-	Case=Gen|Gender=Masc|Number=Sing	11	obl	_	Ref=33
+10	κότον	κότος	NOUN	n-s---ma-	Case=Acc|Gender=Masc|Number=Sing	11	obj	_	Ref=33
+11	πνέων	πνέω	VERB	v-sppamn-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	16	advcl	_	Ref=34|SpaceAfter=No
+12	,	,	PUNCT	u--------	_	11	punct	_	Ref=34
+13	ἀωρόνυκτον	ἀωρόνυκτος	ADJ	a-s---na-	Case=Acc|Gender=Neut|Number=Sing	14	amod	_	Ref=34
+14	ἀμβόαμα	ἀναβόαμα	NOUN	n-s---na-	Case=Acc|Gender=Neut|Number=Sing	16	obj	_	Ref=34
+15	μυχόθεν	μυχόθεν	ADV	d--------	_	16	advmod	_	Ref=35
+16	ἔλακε	λάσκω	VERB	v3saia---	Mood=Ind|Number=Sing|Person=3|Tense=Past|Voice=Act	0	root	_	Ref=35
+17	περὶ	περί	ADP	r--------	_	18	case	_	Ref=35
+18	φόβῳ	φόβος	NOUN	n-s---md-	Case=Dat|Gender=Masc|Number=Sing	16	obl	_	Ref=35|SpaceAfter=No
+19	,	,	PUNCT	u--------	_	24	punct	_	Ref=35
+20	γυναικείοισιν	γυναικεῖος	ADJ	a-p---nd-	Case=Dat|Gender=Neut|Number=Plur	22	amod	_	Ref=36
+21	ἐν	ἐν	ADP	r--------	_	22	case	_	Ref=36
+22	δώμασιν	δῶμα	NOUN	n-p---nd-	Case=Dat|Gender=Neut|Number=Plur	24	obl:arg	_	Ref=36
+23	βαρὺς	βαρύς	ADJ	a-s---mn-	Case=Nom|Gender=Masc|Number=Sing	24	advcl:compl	_	Ref=36
+24	πίτνων	πίπτω	VERB	v-sppamn-	Case=Nom|Gender=Masc|Number=Sing|Tense=Pres|VerbForm=Part|Voice=Pass	16	advcl	_	Ref=36|SpaceAfter=No
+25	.	.	PUNCT	u--------	_	16	punct	_	Ref=36
+
